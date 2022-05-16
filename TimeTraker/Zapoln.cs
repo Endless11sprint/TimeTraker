@@ -88,10 +88,11 @@ namespace TimeTraker
             {
                 Panel panel = new Panel();
                 panel.Tag = i;
+                panel.AutoSize = true;
                 //panel.Width = 487;
                 //panel.Height = 122;
-                panel.MinimumSize = new System.Drawing.Size(387, 122);
-                panel.MaximumSize = new System.Drawing.Size(387, 122);
+               // panel.MinimumSize = new System.Drawing.Size(387, 122);
+                panel.MaximumSize = new System.Drawing.Size(387, 0);
                 //panel.Controls.Add(DescrTask1);
                 //panel.Controls.Add(this.pictureBox13);
                 //panel.Controls.Add(this.pictureBox14);
@@ -106,7 +107,7 @@ namespace TimeTraker
                 DescrTask1.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
                 DescrTask1.Location = new System.Drawing.Point(23, 69);
                 DescrTask1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-                DescrTask1.MaximumSize = new System.Drawing.Size(200, 26);
+                DescrTask1.MaximumSize = new System.Drawing.Size(166, 0);
                 DescrTask1.Name = "DescrTask1";
                 DescrTask1.Size = new System.Drawing.Size(166, 25);
                 DescrTask1.TabIndex = 3;
@@ -145,7 +146,7 @@ namespace TimeTraker
                 NameTask1.Font = new System.Drawing.Font("Franklin Gothic Medium", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
                 NameTask1.Location = new System.Drawing.Point(20, 16);
                 NameTask1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-                NameTask1.MaximumSize = new System.Drawing.Size(200, 42);
+                NameTask1.MaximumSize = new System.Drawing.Size(124, 42);
                 NameTask1.Name = "NameTask1";
                 NameTask1.Size = new System.Drawing.Size(124, 39);
                 NameTask1.TabIndex = 0;
@@ -163,10 +164,11 @@ namespace TimeTraker
             {
                 Panel panel = new Panel();
                 panel.Tag = i;
+                panel.AutoSize = true;
                 //panel.Width = 487;
                 //panel.Height = 122;
-                panel.MinimumSize = new System.Drawing.Size(387, 122);
-                panel.MaximumSize = new System.Drawing.Size(387, 122);
+                //panel.MinimumSize = new System.Drawing.Size(387, 122);
+                panel.MaximumSize = new System.Drawing.Size(387, 0);
                 //panel.Controls.Add(DescrTask1);
                 //panel.Controls.Add(this.pictureBox13);
                 //panel.Controls.Add(this.pictureBox14);
@@ -181,7 +183,7 @@ namespace TimeTraker
                 DescrTask1.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
                 DescrTask1.Location = new System.Drawing.Point(23, 69);
                 DescrTask1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-                DescrTask1.MaximumSize = new System.Drawing.Size(200, 26);
+                DescrTask1.MaximumSize = new System.Drawing.Size(166, 0);
                 DescrTask1.Name = "DescrTask1";
                 DescrTask1.Size = new System.Drawing.Size(166, 25);
                 DescrTask1.TabIndex = 3;
@@ -219,7 +221,7 @@ namespace TimeTraker
                 NameTask1.Font = new System.Drawing.Font("Franklin Gothic Medium", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
                 NameTask1.Location = new System.Drawing.Point(20, 16);
                 NameTask1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-                NameTask1.MaximumSize = new System.Drawing.Size(200, 42);
+                NameTask1.MaximumSize = new System.Drawing.Size(124, 42);
                 NameTask1.Name = "NameTask1";
                 NameTask1.Size = new System.Drawing.Size(124, 39);
                 NameTask1.TabIndex = 0;
@@ -237,10 +239,11 @@ namespace TimeTraker
             {
                 Panel panel = new Panel();
                 panel.Tag = i;
+                panel.AutoSize = true;
                 //panel.Width = 487;
                 //panel.Height = 122;
-                panel.MinimumSize = new System.Drawing.Size(387, 122);
-                panel.MaximumSize = new System.Drawing.Size(387, 122);
+                //panel.MinimumSize = new System.Drawing.Size(387, 1100);
+                panel.MaximumSize = new System.Drawing.Size(387, 0);
                 //panel.Controls.Add(DescrTask1);
                 //panel.Controls.Add(this.pictureBox13);
                 //panel.Controls.Add(this.pictureBox14);
@@ -255,9 +258,10 @@ namespace TimeTraker
                 DescrTask1.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
                 DescrTask1.Location = new System.Drawing.Point(23, 69);
                 DescrTask1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-                DescrTask1.MaximumSize = new System.Drawing.Size(200, 26);
+                //DescrTask1.MaximumSize = new System.Drawing.Size(200, 26);
                 DescrTask1.Name = "DescrTask1";
-                DescrTask1.Size = new System.Drawing.Size(166, 25);
+                //DescrTask1.Size = new System.Drawing.Size(166, 25);
+                DescrTask1.MaximumSize = new System.Drawing.Size(166, 0);
                 DescrTask1.TabIndex = 3;
                 DescrTask1.Text = $"{tasksListOver[i].GetDescription}";
                 panel.Controls.Add(DescrTask1);
@@ -293,7 +297,7 @@ namespace TimeTraker
                 NameTask1.Font = new System.Drawing.Font("Franklin Gothic Medium", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
                 NameTask1.Location = new System.Drawing.Point(20, 16);
                 NameTask1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-                NameTask1.MaximumSize = new System.Drawing.Size(200, 42);
+                NameTask1.MaximumSize = new System.Drawing.Size(124, 39);
                 NameTask1.Name = "NameTask1";
                 NameTask1.Size = new System.Drawing.Size(124, 39);
                 NameTask1.TabIndex = 0;

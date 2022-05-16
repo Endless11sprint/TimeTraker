@@ -105,48 +105,39 @@ namespace TimeTraker
 
         private void MainWinTime_Load(object sender, EventArgs e)
         {
+            
             try
             {
-                try
-                {
+                sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["MyDB"].ConnectionString);
 
-                    sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["MyDB"].ConnectionString);
+                sqlConnection.Open();
 
-                    sqlConnection.Open();
+                Zapoln.flowLayoutPanel2 = flowLayoutPanel2;
+                Zapoln.flowLayoutPanel1 = flowLayoutPanel1;
 
-                    Zapoln.flowLayoutPanel2 = flowLayoutPanel2;
-                    Zapoln.flowLayoutPanel1 = flowLayoutPanel1;
+                Zapoln.mainWinTime = this;
 
-                    Zapoln.mainWinTime = this;
+                Zapoln zapoln = new Zapoln();
+                zapoln.TaskAdd();
+                zapoln.TaskOut();
 
-                    Zapoln zapoln = new Zapoln();
-                    zapoln.TaskAdd();
-                    zapoln.TaskOut();
+                Zapoln zapolnActive = new Zapoln();
+                zapolnActive.TaskActiveAdd();
+                zapolnActive.TaskOutActive();
 
-                    Zapoln zapolnActive = new Zapoln();
-                    zapolnActive.TaskActiveAdd();
-                    zapolnActive.TaskOutActive();
-
-                    Zapoln zapolnOver = new Zapoln();
-                    zapolnActive.TaskOverAdd();
-                    zapolnActive.TaskOutOver();
-
-                }
-                catch
-                {
-                    throw new TheDatabaseNotOpenException("Наше исключение");
-                }
+                Zapoln zapolnOver = new Zapoln();
+                zapolnActive.TaskOverAdd();
+                zapolnActive.TaskOutOver();
+                
+            }
+            catch
+            {
+                MessageBox.Show($"БД не открылась");
+                sqlConnection.Close();
+            }
             //_ = new List<int>();
             sqlConnection.Close();
-            }
-            catch(TheDatabaseNotOpenException Ex)
-            {
-                MessageBox.Show($"Ошибка: {Ex.Message}");
-                sqlConnection.Close();
-                Loger.AddLine(Ex.Message);
-            }
         }
-            
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -165,58 +156,39 @@ namespace TimeTraker
                 controltoremove.Dispose();
             }
 
+            sqlConnection.Open();
+            SqlCommand command = new SqlCommand(
+                $"INSERT INTO [Tasks] (Name, Description) VALUES (@Name, @Description)", 
+                sqlConnection);
 
-            try
-            {
+            //DateTime date = DateTime.Now;
 
+            command.Parameters.AddWithValue("Name", textBox1.Text);
+            command.Parameters.AddWithValue("Description", textBox2.Text);
+           // command.Parameters.AddWithValue("DateStart", $"{date.Month}/{date.Day}/{date.Year} {date.Hour}:{date.Minute}:{date.Second}");
 
-                try
-                {
-                    sqlConnection.Open();
-                    SqlCommand command = new SqlCommand(
-                        $"INSERT INTO [Tasks] (Name, Description) VALUES (@Name, @Description)",
-                        sqlConnection);
+            command.ExecuteNonQuery().ToString();
 
-                    //DateTime date = DateTime.Now;
+            Zapoln.mainWinTime = this;
 
-                    command.Parameters.AddWithValue("Name", textBox1.Text);
-                    command.Parameters.AddWithValue("Description", textBox2.Text);
-                    // command.Parameters.AddWithValue("DateStart", $"{date.Month}/{date.Day}/{date.Year} {date.Hour}:{date.Minute}:{date.Second}");
+            Zapoln zapoln = new Zapoln();
+            zapoln.TaskAdd();
+            zapoln.TaskOut();
 
-                    command.ExecuteNonQuery().ToString();
+            Zapoln zapolnActive = new Zapoln();
+            zapolnActive.TaskActiveAdd();
+            zapolnActive.TaskOutActive();
 
-                    Zapoln.mainWinTime = this;
+            Zapoln zapolnOver = new Zapoln();
+            zapolnActive.TaskOverAdd();
+            zapolnActive.TaskOutOver();
 
-                    Zapoln zapoln = new Zapoln();
-                    zapoln.TaskAdd();
-                    zapoln.TaskOut();
+            
 
-                    Zapoln zapolnActive = new Zapoln();
-                    zapolnActive.TaskActiveAdd();
-                    zapolnActive.TaskOutActive();
+            sqlConnection.Close();
 
-                    Zapoln zapolnOver = new Zapoln();
-                    zapolnActive.TaskOverAdd();
-                    zapolnActive.TaskOutOver();
-
-
-
-                    sqlConnection.Close();
-
-                    textBox1.Text = null;
-                    textBox2.Text = null;
-                }
-                catch
-                {
-                    throw new ButtonNoWorkException("не сработала кнопка добавления ивента");
-                }
-            }
-            catch (ButtonNoWorkException Ex)
-            {
-                MessageBox.Show($"Ошибка: {Ex.Message}");
-                sqlConnection.Close();
-                Loger.AddLine(Ex.Message);
-            }
+            textBox1.Text = null;
+            textBox2.Text = null;
         }
 
         public static void TaskActiveAdd(TasksActive tasksActive)
@@ -240,66 +212,54 @@ namespace TimeTraker
                 controltoremove.Dispose();
             }
             PictureBox picture = sender as PictureBox;
-
             try
             {
-                try
-                {
-                    sqlConnection.Open();
-                    int item = int.Parse(picture.Name);
+                sqlConnection.Open();
+                int item = int.Parse(picture.Name);
 
-                    string name = IdDateBase.GetNameActive(item);
-                    string description = IdDateBase.GetDescriptionActive(item);
+                string name = IdDateBase.GetNameActive(item);
+                string description = IdDateBase.GetDescriptionActive(item);
 
-                    DateTime dateTime = new DateTime();
+                DateTime dateTime = new DateTime();
 
-                    IdDateBase.GetDateStartActive(item, dateTime);
+                IdDateBase.GetDateStartActive(item, dateTime);
 
-                    SqlCommand command = new SqlCommand(
-                    $"INSERT INTO [TasksOver] (Name, Description, DateStart,DateFinish) VALUES (@Name, @Description, @DateStart, @DateFinish)",
-                    sqlConnection);
+                SqlCommand command = new SqlCommand(
+                $"INSERT INTO [TasksOver] (Name, Description, DateStart,DateFinish) VALUES (@Name, @Description, @DateStart, @DateFinish)",
+                sqlConnection);
+                
+                DateTime date = DateTime.Now;
 
-                    DateTime date = DateTime.Now;
-
-                    command.Parameters.AddWithValue("Name", name);
-                    command.Parameters.AddWithValue("Description", description);
-                    command.Parameters.AddWithValue("DateStart", $"{dateTime.Month}/{dateTime.Day}/{dateTime.Year} {dateTime.Hour}:{dateTime.Minute}:{dateTime.Second}");
-                    command.Parameters.AddWithValue("DateFinish", $"{date.Month}/{date.Day}/{date.Year} {date.Hour}:{date.Minute}:{date.Second}");
+                command.Parameters.AddWithValue("Name", name);
+                command.Parameters.AddWithValue("Description", description);
+                command.Parameters.AddWithValue("DateStart", $"{dateTime.Month}/{dateTime.Day}/{dateTime.Year} {dateTime.Hour}:{dateTime.Minute}:{dateTime.Second}");
+                command.Parameters.AddWithValue("DateFinish", $"{date.Month}/{date.Day}/{date.Year} {date.Hour}:{date.Minute}:{date.Second}");
 
 
-                    SqlCommand sqlCom = new SqlCommand($"DELETE FROM TasksActive WHERE Id = {item}", sqlConnection);
-                    int result = sqlCom.ExecuteNonQuery();
+                SqlCommand sqlCom = new SqlCommand($"DELETE FROM TasksActive WHERE Id = {item}", sqlConnection);
+                int result = sqlCom.ExecuteNonQuery();
 
-                    command.ExecuteNonQuery().ToString();
+               command.ExecuteNonQuery().ToString();
 
 
-                    Zapoln zapoln = new Zapoln();
-                    zapoln.TaskAdd();
-                    zapoln.TaskOut();
+                Zapoln zapoln = new Zapoln();
+                zapoln.TaskAdd();
+                zapoln.TaskOut();
 
-                    Zapoln zapolnActive = new Zapoln();
-                    zapolnActive.TaskActiveAdd();
-                    zapolnActive.TaskOutActive();
+                Zapoln zapolnActive = new Zapoln();
+                zapolnActive.TaskActiveAdd();
+                zapolnActive.TaskOutActive();
 
-                    Zapoln zapolnOver = new Zapoln();
-                    zapolnActive.TaskOverAdd();
-                    zapolnActive.TaskOutOver();
-                }
-                catch
-                {
-                    throw new ButtonNoWorkException("не сработала кнопка остановки ивента");
-                }
-                sqlConnection.Close();
+                Zapoln zapolnOver = new Zapoln();
+                zapolnActive.TaskOverAdd();
+                zapolnActive.TaskOutOver();
             }
-
-            catch(ButtonNoWorkException Ex)
+            catch
             {
-                MessageBox.Show($"Ошибка: {Ex.Message}");
+                MessageBox.Show($"Ты дурак");
                 sqlConnection.Close();
-                Loger.AddLine(Ex.Message);
             }
-
-
+            sqlConnection.Close();
         }
         
         
@@ -327,55 +287,48 @@ namespace TimeTraker
             PictureBox picture = sender as PictureBox;
             try
             {
-                try
-                {
-                    sqlConnection.Open();
-                    int item = int.Parse(picture.Name);
+                sqlConnection.Open();
+                int item = int.Parse(picture.Name);
 
-                    string name = IdDateBase.GetName(item);
-                    string description = IdDateBase.GetDescription(item);
-                    SqlCommand command = new SqlCommand(
-                    $"INSERT INTO [TasksActive] (Name, Description, DateStart) VALUES (@Name, @Description, @DateStart)",
-                    sqlConnection);
+                string name = IdDateBase.GetName(item);
+                string description = IdDateBase.GetDescription(item);
+                SqlCommand command = new SqlCommand(
+                $"INSERT INTO [TasksActive] (Name, Description, DateStart) VALUES (@Name, @Description, @DateStart)",
+                sqlConnection);
 
-                    DateTime date = DateTime.Now;
+                DateTime date = DateTime.Now;
 
-                    command.Parameters.AddWithValue("Name", name);
-                    command.Parameters.AddWithValue("Description", description);
-                    command.Parameters.AddWithValue("DateStart", $"{date.Month}/{date.Day}/{date.Year} {date.Hour}:{date.Minute}:{date.Second}");
+                command.Parameters.AddWithValue("Name", name);
+                command.Parameters.AddWithValue("Description", description);
+                command.Parameters.AddWithValue("DateStart", $"{date.Month}/{date.Day}/{date.Year} {date.Hour}:{date.Minute}:{date.Second}");
 
-                    command.ExecuteNonQuery().ToString();
+                command.ExecuteNonQuery().ToString();
+                
 
+                SqlCommand sqlCom = new SqlCommand($"DELETE FROM Tasks WHERE Id = {item}", sqlConnection);
+                int result = sqlCom.ExecuteNonQuery();
 
-                    SqlCommand sqlCom = new SqlCommand($"DELETE FROM Tasks WHERE Id = {item}", sqlConnection);
-                    int result = sqlCom.ExecuteNonQuery();
+               
 
+                Zapoln zapoln = new Zapoln();
+                zapoln.TaskAdd();
+                zapoln.TaskOut();
 
+                Zapoln zapolnActive = new Zapoln();
+                zapolnActive.TaskActiveAdd();
+                zapolnActive.TaskOutActive();
 
-                    Zapoln zapoln = new Zapoln();
-                    zapoln.TaskAdd();
-                    zapoln.TaskOut();
-
-                    Zapoln zapolnActive = new Zapoln();
-                    zapolnActive.TaskActiveAdd();
-                    zapolnActive.TaskOutActive();
-
-                    Zapoln zapolnOver = new Zapoln();
-                    zapolnActive.TaskOverAdd();
-                    zapolnActive.TaskOutOver();
-                }
-                catch
-                {
-                    throw new ButtonNoWorkException("не сработала кнопка активации ивента");
-                }
-
-                sqlConnection.Close();
+                Zapoln zapolnOver = new Zapoln();
+                zapolnActive.TaskOverAdd();
+                zapolnActive.TaskOutOver();
             }
-            catch(ButtonNoWorkException Ex)
+            catch
             {
-                MessageBox.Show($"Ошибка: {Ex.Message}");
+                MessageBox.Show($"Ты дурак");
                 sqlConnection.Close();
             }
+
+            sqlConnection.Close();
         }
     }
 

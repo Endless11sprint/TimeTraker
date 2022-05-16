@@ -62,9 +62,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ButtonNoWorkException.cs" />
-    <Compile Include="Loger.cs" />
-    <Compile Include="TheDatabaseNotOpenException.cs" />
     <Compile Include="FlowExileTasks.cs" />
     <Compile Include="Zapoln.cs" />
     <Compile Include="TasksOver.cs" />
