@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "B+/gNYmU7MY9guo3D/KcPf8//UQHHDugDygDRVJHBBM5jadFfCLbzXbMP8MyIvKD4ilztdEdD5F9jEXqS6WKkg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\karkr\\Desktop\\TimeTraker-rel\\TimeTraker\\TimeTraker.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\karkr\\.nuget\\packages\\bouncycastle\\1.8.9\\bouncycastle.1.8.9.nupkg.sha512",
+    "C:\\Users\\karkr\\.nuget\\packages\\itextsharp\\5.5.13.3\\itextsharp.5.5.13.3.nupkg.sha512",
+    "C:\\Users\\karkr\\.nuget\\packages\\mono.gendarme\\2.11.0.20121120\\mono.gendarme.2.11.0.20121120.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,247 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETFramework,Version=v4.7.2": {
+      "BouncyCastle/1.8.9": {
+        "type": "package",
+        "compile": {
+          "lib/BouncyCastle.Crypto.dll": {}
+        },
+        "runtime": {
+          "lib/BouncyCastle.Crypto.dll": {}
+        }
+      },
+      "iTextSharp/5.5.13.3": {
+        "type": "package",
+        "dependencies": {
+          "BouncyCastle": "1.8.9"
+        },
+        "compile": {
+          "lib/itextsharp.dll": {}
+        },
+        "runtime": {
+          "lib/itextsharp.dll": {}
+        }
+      },
+      "Mono.Gendarme/2.11.0.20121120": {
+        "type": "package"
+      }
+    },
+    ".NETFramework,Version=v4.7.2/win": {
+      "BouncyCastle/1.8.9": {
+        "type": "package",
+        "compile": {
+          "lib/BouncyCastle.Crypto.dll": {}
+        },
+        "runtime": {
+          "lib/BouncyCastle.Crypto.dll": {}
+        }
+      },
+      "iTextSharp/5.5.13.3": {
+        "type": "package",
+        "dependencies": {
+          "BouncyCastle": "1.8.9"
+        },
+        "compile": {
+          "lib/itextsharp.dll": {}
+        },
+        "runtime": {
+          "lib/itextsharp.dll": {}
+        }
+      },
+      "Mono.Gendarme/2.11.0.20121120": {
+        "type": "package"
+      }
+    },
+    ".NETFramework,Version=v4.7.2/win-x64": {
+      "BouncyCastle/1.8.9": {
+        "type": "package",
+        "compile": {
+          "lib/BouncyCastle.Crypto.dll": {}
+        },
+        "runtime": {
+          "lib/BouncyCastle.Crypto.dll": {}
+        }
+      },
+      "iTextSharp/5.5.13.3": {
+        "type": "package",
+        "dependencies": {
+          "BouncyCastle": "1.8.9"
+        },
+        "compile": {
+          "lib/itextsharp.dll": {}
+        },
+        "runtime": {
+          "lib/itextsharp.dll": {}
+        }
+      },
+      "Mono.Gendarme/2.11.0.20121120": {
+        "type": "package"
+      }
+    },
+    ".NETFramework,Version=v4.7.2/win-x86": {
+      "BouncyCastle/1.8.9": {
+        "type": "package",
+        "compile": {
+          "lib/BouncyCastle.Crypto.dll": {}
+        },
+        "runtime": {
+          "lib/BouncyCastle.Crypto.dll": {}
+        }
+      },
+      "iTextSharp/5.5.13.3": {
+        "type": "package",
+        "dependencies": {
+          "BouncyCastle": "1.8.9"
+        },
+        "compile": {
+          "lib/itextsharp.dll": {}
+        },
+        "runtime": {
+          "lib/itextsharp.dll": {}
+        }
+      },
+      "Mono.Gendarme/2.11.0.20121120": {
+        "type": "package"
+      }
+    }
+  },
+  "libraries": {
+    "BouncyCastle/1.8.9": {
+      "sha512": "axnBgvdD5n+FnEG6efk/tfKuMFru7R/EoISH9zjh319yb3HD24TEHSAbNN/lTRT2ulOGRxDgOsCjkuk08iwWPg==",
+      "type": "package",
+      "path": "bouncycastle/1.8.9",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "bouncycastle.1.8.9.nupkg.sha512",
+        "bouncycastle.nuspec",
+        "lib/BouncyCastle.Crypto.dll"
+      ]
+    },
+    "iTextSharp/5.5.13.3": {
+      "sha512": "vtnMhTEJdZFCkLqaQLjD8aqTBIVKHPrSFuSXnxbLEJlvE/j/l88fvG9wtsejXTmhtErMo0lA9T2LdfdfbwplYw==",
+      "type": "package",
+      "path": "itextsharp/5.5.13.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "gnu-agpl-v3.0.md",
+        "itextsharp.5.5.13.3.nupkg.sha512",
+        "itextsharp.nuspec",
+        "lib/iTextSharp.xml",
+        "lib/itextsharp.dll",
+        "notice.txt"
+      ]
+    },
+    "Mono.Gendarme/2.11.0.20121120": {
+      "sha512": "wViIm1N2DEq5AgZbZgmFO8PLVi3XlnmluP4MWUBCKTuBs/f3vgoJR12HtP5ZGUzgm4vULM4WgrlkV3HmhUNGFg==",
+      "type": "package",
+      "path": "mono.gendarme/2.11.0.20121120",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "mono.gendarme.2.11.0.20121120.nupkg.sha512",
+        "mono.gendarme.nuspec",
+        "tools/Gendarme.Framework.dll",
+        "tools/Gendarme.Rules.BadPractice.dll",
+        "tools/Gendarme.Rules.Concurrency.dll",
+        "tools/Gendarme.Rules.Correctness.dll",
+        "tools/Gendarme.Rules.Design.Generic.dll",
+        "tools/Gendarme.Rules.Design.Linq.dll",
+        "tools/Gendarme.Rules.Design.dll",
+        "tools/Gendarme.Rules.Exceptions.dll",
+        "tools/Gendarme.Rules.Gendarme.dll",
+        "tools/Gendarme.Rules.Interoperability.Com.dll",
+        "tools/Gendarme.Rules.Interoperability.dll",
+        "tools/Gendarme.Rules.Maintainability.dll",
+        "tools/Gendarme.Rules.NUnit.dll",
+        "tools/Gendarme.Rules.Naming.dll",
+        "tools/Gendarme.Rules.Performance.dll",
+        "tools/Gendarme.Rules.Portability.dll",
+        "tools/Gendarme.Rules.Security.Cas.dll",
+        "tools/Gendarme.Rules.Security.dll",
+        "tools/Gendarme.Rules.Serialization.dll",
+        "tools/Gendarme.Rules.Smells.dll",
+        "tools/Gendarme.Rules.Ui.dll",
+        "tools/GendarmeWizard.exe",
+        "tools/ICSharpCode.SharpZipLib.dll",
+        "tools/Mono.Cecil.Mdb.dll",
+        "tools/Mono.Cecil.Pdb.dll",
+        "tools/Mono.Cecil.dll",
+        "tools/gendarme.exe",
+        "tools/rules.xml"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETFramework,Version=v4.7.2": [
+      "Mono.Gendarme >= 2.11.0.20121120",
+      "iTextSharp >= 5.5.13.3"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\karkr\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\karkr\\Desktop\\TimeTraker-rel\\TimeTraker\\TimeTraker.csproj",
+      "projectName": "TimeTraker",
+      "projectPath": "C:\\Users\\karkr\\Desktop\\TimeTraker-rel\\TimeTraker\\TimeTraker.csproj",
+      "packagesPath": "C:\\Users\\karkr\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\karkr\\Desktop\\TimeTraker-rel\\TimeTraker\\obj\\",
+      "projectStyle": "PackageReference",
+      "skipContentFileWrite": true,
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\karkr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net472"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net472": {
+          "projectReferences": {}
+        }
+      }
+    },
+    "frameworks": {
+      "net472": {
+        "dependencies": {
+          "Mono.Gendarme": {
+            "target": "Package",
+            "version": "[2.11.0.20121120, )"
+          },
+          "iTextSharp": {
+            "target": "Package",
+            "version": "[5.5.13.3, )"
+          }
+        }
+      }
+    },
+    "runtimes": {
+      "win": {
+        "#import": []
+      },
+      "win-x64": {
+        "#import": []
+      },
+      "win-x86": {
+        "#import": []
+      }
+    }
+  }
+}

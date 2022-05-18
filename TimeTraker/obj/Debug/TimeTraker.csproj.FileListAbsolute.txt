@@ -1,0 +1,16 @@
+C:\Users\karkr\Desktop\TimeTraker-rel\TimeTraker\bin\Debug\Database1.mdf
+C:\Users\karkr\Desktop\TimeTraker-rel\TimeTraker\bin\Debug\Database1_log.ldf
+C:\Users\karkr\Desktop\TimeTraker-rel\TimeTraker\bin\Debug\TimeTraker.exe.config
+C:\Users\karkr\Desktop\TimeTraker-rel\TimeTraker\bin\Debug\TimeTraker.exe
+C:\Users\karkr\Desktop\TimeTraker-rel\TimeTraker\bin\Debug\TimeTraker.pdb
+C:\Users\karkr\Desktop\TimeTraker-rel\TimeTraker\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\karkr\Desktop\TimeTraker-rel\TimeTraker\bin\Debug\itextsharp.dll
+C:\Users\karkr\Desktop\TimeTraker-rel\TimeTraker\obj\Debug\TimeTraker.csproj.AssemblyReference.cache
+C:\Users\karkr\Desktop\TimeTraker-rel\TimeTraker\obj\Debug\TimeTraker.csproj.SuggestedBindingRedirects.cache
+C:\Users\karkr\Desktop\TimeTraker-rel\TimeTraker\obj\Debug\TimeTraker.MainWinTime.resources
+C:\Users\karkr\Desktop\TimeTraker-rel\TimeTraker\obj\Debug\TimeTraker.Properties.Resources.resources
+C:\Users\karkr\Desktop\TimeTraker-rel\TimeTraker\obj\Debug\TimeTraker.csproj.GenerateResource.cache
+C:\Users\karkr\Desktop\TimeTraker-rel\TimeTraker\obj\Debug\TimeTraker.csproj.CoreCompileInputs.cache
+C:\Users\karkr\Desktop\TimeTraker-rel\TimeTraker\obj\Debug\TimeTraker.csproj.CopyComplete
+C:\Users\karkr\Desktop\TimeTraker-rel\TimeTraker\obj\Debug\TimeTraker.exe
+C:\Users\karkr\Desktop\TimeTraker-rel\TimeTraker\obj\Debug\TimeTraker.pdb
