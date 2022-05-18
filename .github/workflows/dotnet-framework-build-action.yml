@@ -28,7 +28,7 @@ jobs:
 
     - name: Build Solution
       run: |
-        msbuild.exe TimeTraker.sln /nologo /nr:false //p:PublishUrl="../_build"
+        msbuild.exe TimeTraker.sln /nologo /nr:false
         
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0
